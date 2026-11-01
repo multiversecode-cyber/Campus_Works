@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "campusworks_final": {
+      "root": "campusworks_final",
+      "framework": "vite"
+    },
+    "campusworks_flask_backend": {
+      "root": "campusworks_flask_backend",
+      "entrypoint": "run:app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": {
+        "service": "campusworks_flask_backend"
+      }
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "campusworks_flask_backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "campusworks_final"
+      }
+    }
+  ]
+}
