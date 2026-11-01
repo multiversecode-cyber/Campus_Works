@@ -17,7 +17,7 @@ jwt = JWTManager()
 
 def create_app(test_config=None):
 
-    # Use a writable temporary directory on Windows and Vercel.
+    # Writable temporary directory for Windows and Vercel.
     instance_dir = os.path.join(
         tempfile.gettempdir(),
         "campusworks-instance"
@@ -44,7 +44,7 @@ def create_app(test_config=None):
         "sqlite:///campusworks.db"
     )
 
-    # Support PostgreSQL connection URL formats.
+    # Support older PostgreSQL URL format.
     if database_url.startswith("postgres://"):
         database_url = database_url.replace(
             "postgres://",
@@ -83,13 +83,16 @@ def create_app(test_config=None):
 
     app.register_blueprint(api, url_prefix="/api")
 
+    # Health check endpoints.
     @app.get("/health")
+    @app.get("/api/health")
     def health():
         return jsonify({
             "status": "ok",
             "service": "CampusWorks Flask API"
         })
 
+    # Initialize database tables.
     with app.app_context():
         from . import models
         db.create_all()
