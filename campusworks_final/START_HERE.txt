@@ -1,0 +1,27 @@
+CAMPUSWORKS FRONTEND - ALL PHASES
+
+This is ONE React + Vite frontend project containing all frontend phases.
+
+1. Open this folder in VS Code.
+2. Open Terminal in THIS folder (the folder containing package.json).
+3. Run:
+   npm install
+4. Then run:
+   npm run dev
+5. Open the Local URL shown by Vite, normally:
+   http://localhost:5173/
+
+IMPORTANT:
+Do NOT run npm commands from the parent folder. The terminal must show the path to this folder, and 'dir' must show package.json and src.
+
+Included frontend phases:
+Phase 1 - React/Vite foundation and landing pages
+Phase 2 - Authentication UI
+Phase 3 - Student profile, explore and applications
+Phase 4 - Opportunity details/search/filter
+Phase 5 - Faculty and Club dashboards/posting/applicants
+Phase 6 - Application workflow/status management
+Phase 7 - Admin dashboard UI
+Phase 8 - Responsive styling, dummy data and final frontend polish
+
+Backend is not included in this ZIP. It will be connected later through Flask REST APIs.

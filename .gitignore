@@ -1,0 +1,51 @@
+
+# ==================================
+# CAMPUSWORKS - ROOT GITIGNORE
+# ==================================
+
+# Ignore duplicate project folder
+/Cherry/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Backend environment secrets
+.env
+.env.*
+!.env.example
+
+# Database files
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Node.js dependencies
+node_modules/
+
+# React / Vite build output
+dist/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
